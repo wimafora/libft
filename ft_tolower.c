@@ -6,11 +6,11 @@
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 16:04:44 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/21 16:05:21 by wimafora         ###   ########.fr       */
+/*   Updated: 2019/05/21 16:06:58 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/*#include <stdio.h>*/
 
 int 	ft_tolower(int i)
 {
@@ -20,10 +20,10 @@ int 	ft_tolower(int i)
 	}
 }
 
-int main(void)
+/*int main(void)
 {
 	char alpha = 'a';
 
 	printf("%c", ft_tolower(alpha));
 	return(0);
-}
+}*/
