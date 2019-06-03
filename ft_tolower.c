@@ -5,25 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 16:04:44 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/21 16:06:58 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:34:43 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:34:44 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
+#include "libft.h"
 
-int 	ft_tolower(int i)
+int		ft_tolower(int c)
 {
-	if (i >= 65 && i <= 122)
+	if (c >= 65 && c <= 90)
 	{
-	    return(i +32);
+		return (c + 32);
 	}
+	return (c);
 }
-
-/*int main(void)
-{
-	char alpha = 'a';
-
-	printf("%c", ft_tolower(alpha));
-	return(0);
-}*/

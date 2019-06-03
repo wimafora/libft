@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:26:37 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/03 12:26:42 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:33:28 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:33:30 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
 
-int		ft_isascii(int i)
+int		ft_strncmp(const char *p1, const char *p2, size_t n)
 {
-	if (i >= 00 && i <= 0177)
-		return (1);
+	while ((unsigned char)*p1 == (unsigned char)*p2 && n--)
+	{
+		if (*p1 == '\0' || *p2 == '\0')
+		{
+			return (0);
+		}
+		p1++;
+		p2++;
+	}
+	if (!n)
+	{
+		return ((unsigned char)*--p1 - (unsigned char)*--p2);
+	}
 	else
-		return (0);
+	{
+		return ((unsigned char)*p1 - (unsigned char)*p2);
+	}
 }

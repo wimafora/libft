@@ -1,33 +1,34 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/03 12:29:39 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:29:41 by wimafora         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strcat(char *dst, const char *src)
+#include "libft.h"
+
+char	*ft_strcat(char *dest, const char *src)
 {
-	unsigned int i;
-	unsigned int j;
+	int	i;
 
 	i = 0;
-	while (dst[i] != '\0')
+	while (*dest)
+	{
 		i++;
-	j = 0;
-       while (src[j] != '\0')
-       {
-       		dst[i] = src[j];
+	}
+	while (*src)
+	{
+		*dest = *src;
+		dest++;
+		src++;
 		i++;
-		j++;
-       }
-       dst[i] = '\0';
-	return (dst);    
-}
-
-int main(void)
-{
-	char src[50], dst [50];
-	strcpy(src, "This is the source");
-	strcpy(dst, "This is the destination");
-
-	*ft_strcat(dst, src);
-	
-	printf("Final Destination string : |%s|" , dst);
-	return (0);
+	}
+	*dest = '\0';
+	dest = dest - i;
+	return (dest);
 }

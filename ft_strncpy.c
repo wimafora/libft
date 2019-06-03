@@ -5,25 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 14:47:58 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/22 14:54:55 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:33:42 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:33:44 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_stpncpy(char * dst, const char * src, size_t len)
-{
-	size_t i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] != '\0' && i < len)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
+{
+	size_t index;
+
+	index = 0;
+	while (src[index] && index < len)
 	{
-		dst[i] = src[i];
-		i++
-	}	
-	while (x < len)
-	{
-		dst[i] = '\0';
-		i++;
+		dst[index] = src[index];
+		index++;
 	}
+	while (index < len)
+		dst[index] = '\0';
 	return (dst);
 }

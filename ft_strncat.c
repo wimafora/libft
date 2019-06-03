@@ -5,26 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 15:49:56 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/24 16:00:58 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:32:25 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:32:30 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dst, const char *src, size_t n)
-{
-		int	i;
-		size_t	j;
+#include "libft.h"
 
-		i = 0;
-		while (dst[i] != '\0');
-			i++;
-		j = 0;
-		while (src[j] != '\0' && j < n)
-		{
-			dst[i] = src[j];
-			i++
-			j++
-		}
-		dst[i] = '\0';
-		return(dst);
+char	*ft_strncat(char *s1, const char *s2, size_t n)
+{
+	int		i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (s1[i] != '\0')
+	{
+		i++;
+	}
+	while (n > j && s2[j] != '\0')
+	{
+		s1[i + j] = s2[j];
+		j++;
+	}
+	s1[i + j] = '\0';
+	return (s1);
 }

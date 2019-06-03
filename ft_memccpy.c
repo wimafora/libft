@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:26:37 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/03 12:26:42 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:27:37 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:27:40 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
 
-int		ft_isascii(int i)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t len)
 {
-	if (i >= 00 && i <= 0177)
-		return (1);
+	char		*d;
+	char		*s;
+
+	d = (char*)dst;
+	s = (char*)src;
+	while (len > 0 && *s != c)
+	{
+		--len;
+		*d = *s;
+		d++;
+		s++;
+	}
+	if (len > 0)
+	{
+		*d++ = c;
+		return ((void*)d);
+	}
 	else
-		return (0);
+		return (NULL);
 }

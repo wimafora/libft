@@ -5,17 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 11:55:47 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/22 11:58:45 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:32:11 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:32:12 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t		ft_strlen(const char *str)
-{
-		int count;
+#include "libft.h"
 
-		count = 0;
-		while (str[count])
-			count++;
-		return (count);
+size_t	ft_strlen(const char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

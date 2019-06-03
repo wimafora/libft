@@ -5,25 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 15:51:34 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/21 16:04:18 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:34:50 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:34:52 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
+#include "libft.h"
 
-int 	ft_toupper(int i)
+int		ft_toupper(char c)
 {
-	if (i >= 65 && i <= 122)
+	if (c >= 97 && c <= 122)
 	{
-	    return(i -32);
+		return (c - 32);
 	}
+	return (c);
 }
-
-/*int main(void)
-{
-	char alpha = 'a';
-
-	printf("%c", ft_toupper(alpha));
-	return(0);
-}*/

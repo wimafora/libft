@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:26:37 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/03 12:26:42 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:27:48 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:27:50 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
 
-int		ft_isascii(int i)
+void	*ft_memchr(const void *str, int c, size_t len)
 {
-	if (i >= 00 && i <= 0177)
-		return (1);
-	else
-		return (0);
+	size_t		i;
+
+	i = 0;
+	while (i < len)
+	{
+		if (((unsigned char*)str)[i] == (unsigned char)c)
+			return ((void*)(str + i));
+		i++;
+	}
+	return (NULL);
 }

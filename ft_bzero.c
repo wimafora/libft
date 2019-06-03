@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:26:37 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/03 12:26:42 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:25:48 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:25:51 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
 
-int		ft_isascii(int i)
+void	ft_bzero(void *s, size_t n)
 {
-	if (i >= 00 && i <= 0177)
-		return (1);
-	else
-		return (0);
+	ft_memset(s, 0, n);
 }

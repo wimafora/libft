@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:26:37 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/03 12:26:42 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:28:21 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:28:23 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
 
-int		ft_isascii(int i)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (i >= 00 && i <= 0177)
-		return (1);
+	char		*d;
+	char		*s;
+
+	d = (char*)dst;
+	s = (char*)src;
+	if (s < d)
+	{
+		d = d + len - 1;
+		s = s + len - 1;
+		while (len > 0)
+		{
+			*d-- = *s--;
+			len--;
+		}
+	}
 	else
-		return (0);
+	{
+		while (len > 0)
+		{
+			*d++ = *s++;
+			len--;
+		}
+	}
+	return (dst);
 }

@@ -5,28 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 12:08:49 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/22 12:13:38 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:31:25 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:31:26 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	 *ft_strdup(const char *src)
-{
-	char *new;
-	int i;
-	int size;
+#include "libft.h"
 
-	size = 0;
-	while (src[size])
-		size++;
-	if (!(new = melloc(sizeof(char) * (size + 1))))
-		return(NULL);
-	i = 0;
-	while (src[i])
+char	*ft_strdup(const char *s1)
+{
+	int			org_size;
+	static char	*dup;
+	char		*dup_offset;
+
+	org_size = strlen(s1);
+	dup = (char *)malloc(sizeof(char) * org_size + 1);
+	if
+		(dup == NULL)
+		return ((char *)NULL);
+	dup_offset = dup;
+	while (*s1)
 	{
-		new [i] = src [i];
-		i++;
+		*dup_offset = *s1;
+		dup_offset++;
+		s1++;
 	}
-	new [i] = '\0';
-	return (new);
+	*dup_offset = '\0';
+	return (dup);
 }
