@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:27:09 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/06 09:40:37 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/05 14:09:59 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/05 14:37:04 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_isprint(int c)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	if (c >= 32 && c <= 126)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	char *ptr;
+
+	if (!s || !f)
+		return ;
+	ptr = s;
+	while (*ptr)
+		f(ptr++);
 }
