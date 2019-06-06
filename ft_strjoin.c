@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 14:02:08 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/06 14:11:56 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/06 14:18:24 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/06 15:28:33 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int			org_size;
-	char		*dup;
-	char			*dup_offset;
+	char			*ft_s;
+	unsigned int	len;
 
-	org_size = strlen(s1);
-	dup = (char *)malloc(sizeof(char) * org_size + 1);
-
-	if(dup == NULL)
-		return ((char *)NULL);
-	dup_offset = dup;
-	while (*s1)
+	len = ft_strlen(s1) + ft_strlen(s2);
+	ft_s = (char *)malloc(sizeof(*ft_s) * len);
+	if (ft_s)
 	{
-		*dup_offset = *s1;
-		dup_offset++;
-		s1++;
+		ft_strcpy(ft_s, s1);
+		ft_strcat(ft_s, s2);
+		ft_s[len++] = '\0';
+		return (ft_s);
 	}
-	*dup_offset = '\0';
-	return (dup);
+	return (0);
 }
-
