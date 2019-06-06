@@ -5,22 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 14:38:59 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/22 14:47:21 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:31:13 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:31:15 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	 *ft_strcpy(char *dst, const char *src)
-{
-	unsigned int i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] != '\0')
+char	*ft_strcpy(char *dst, const char *src)
+{
+	int k;
+
+	k = 0;
+	while (src[k] != '\0')
 	{
-		dst[i] = src [i];
-		i++;
+		dst[k] = src[k];
+		k++;
 	}
-	dst[i] = src [i];
+	dst[k] = '\0';
 	return (dst);
 }
-

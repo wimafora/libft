@@ -5,30 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 12:09:27 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/21 12:13:42 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:26:56 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:26:58 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>
-#include <stdio.h>*/
+#include "libft.h"
 
-int		ft_isalpha(int i)
+int	ft_isdigit(int c)
 {
-	if (i >= 48 && i <= 57)
-	{
-		write(1, "Is an digit\n", 11);
-	}
-	else
-	{
-		write(1, "Not an digit\n", 12);
-	}
+	return (c >= '0' && c <= '9');
 }
-
-/*int		main(void)
-{
-	char alpha = 'k';
-
-	printf("%c", ft_isalpha(alpha));
-	return (0);
-}*/

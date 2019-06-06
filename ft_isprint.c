@@ -5,30 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 15:08:38 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/21 15:18:22 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:27:09 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/06 09:40:37 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>
-#include <stdio.h>*/
+#include "libft.h"
 
-int		ft_isprint(int i)
+int		ft_isprint(int c)
 {
-	if (i >= 32 && i <= 126)
+	if (c >= 32 && c <= 126)
 	{
-		write(1, "Is an print value\n", 17);
+		return (1);
 	}
 	else
 	{
-		write(1, "Not an print value\n", 18);
+		return (0);
 	}
 }
-
-/*int		main(void)
-{
-	char alpha = '';
-
-	printf("%c", ft_isprint(alpha));
-	return (0);
-}*/

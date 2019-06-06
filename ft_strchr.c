@@ -5,20 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/26 12:52:21 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/26 13:07:16 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:30:49 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:30:51 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *i, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	while(*i)
+	while (*s)
 	{
-		if(*i == c)
-			return ((char*)i);
-		i++;
+		if (*s == c)
+			return ((char*)s);
+		++s;
 	}
 	if (c == '\0')
-		return ((char*)i);
+		return ((char*)s);
 	return (0);
 }

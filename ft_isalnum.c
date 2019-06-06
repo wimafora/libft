@@ -5,30 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:14:35 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/21 14:29:42 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:26:12 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:26:15 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>
-#include <stdio.h>*/
+#include "libft.h"
 
-int		ft_isalnum(int i)
+int		ft_isalnum(int c)
 {
-	if ((i >= 48 && i <= 57) || (i >= 65 && i <= 90) || (i >= 97 && i <= 122))
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 	{
-		write(1, "Is an alphanumeric\n", 18);
+		return (1);
 	}
 	else
 	{
-		write(1, "Not an alphanumeric\n", 19);
+		return (0);
 	}
 }
-
-/*int		main(void)
-{
-	char alpha = '6';
-
-	printf("%c", ft_isalnum(alpha));
-	return (0);
-}*/

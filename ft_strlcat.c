@@ -5,34 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/26 12:06:11 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/26 12:12:49 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:31:40 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 12:31:41 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
-{
-	size_t i;
-	size_t j;
-	size_t k;
+#include "libft.h"
 
-	i = 0;
-	while (dst[i] != '\0')
-		i++;
-	k = 0;
-	while (src[k] != '\0')
-		k++;
-	if (size <= i)
-		k += size;
-	else
-		k += i;
-	j = 0;
-	while (src[j] != '\0' && i + 1 < size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	char		*d;
+	const char	*s;
+	size_t		n;
+	size_t		dlen;
+
+	d = dst;
+	s = src;
+	n = size;
+	while (n-- != 0 && *d != '\0')
+		d++;
+	dlen = d - dst;
+	n = size - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(s));
+	while (*s != '\0')
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		if (n != 1)
+		{
+			*d++ = *s;
+			n--;
+		}
+		s++;
 	}
-	dst[i] = '\0';
-	return(k);
+	*d = '\0';
+	return (dlen + (s - src));
 }

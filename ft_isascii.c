@@ -5,30 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:32:40 by wimafora          #+#    #+#             */
-/*   Updated: 2019/05/21 14:44:51 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/03 12:26:37 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/03 13:36:01 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <unistd.h>
-#include <stdio.h>*/
+#include "libft.h"
 
-int 	ft_isascii(int i)
+int		ft_isascii(int i)
 {
-	if (i >= 0 && i <= 127 )
-	{
-		write(1, "Is an ascii value\n", 19);
-	}
+	if (i >= 00 && i <= 0177)
+		return (1);
 	else
-	{
-		write(1, "Not an ascii value\n", 20);
-	}
+		return (0);
 }
-
-/*int		main(void)
-{
-	char alpha = '\\';
-
-	printf("%c", ft_isascii(alpha));
-	return(0);
-}*/
