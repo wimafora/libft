@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 14:02:08 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/06 16:05:47 by wimafora         ###   ########.fr       */
+/*   Created: 2019/06/06 15:32:26 by wimafora          #+#    #+#             */
+/*   Updated: 2019/06/06 15:45:17 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strtrim(char const *s)
 {
-	char	*dup;
-	size_t	i;
+	size_t	start;
+	size_t	len;
 
-	dup = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
-	if (dup)
-	{
-		i = 0;
-		while (s1[i])
-		{
-			dup[i] = s1[i];
-			i++;
-		}
-		dup[i] = '\0';
-		return (dup);
-	}
-	return (0);
+	start = 0;
+	while ((s[start] == ' ' || s[start] == '\n' || s[start] == '\t'))
+		start++;
+	if (s[start] == '\0')
+		return (ft_strdup(s + start));
+	len = ft_strlen(s) - 1;
+	while ((s[len] == ' ' || s[len] == '\t' || s[len] == '\n') && len > 0)
+		len--;
+	return (ft_strsub(s, start, len - start + 1));
 }
