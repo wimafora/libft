@@ -6,13 +6,13 @@
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 12:34:50 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/03 12:34:52 by wimafora         ###   ########.fr       */
+/*   Updated: 2019/06/11 15:06:05 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(char c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 	{

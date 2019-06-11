@@ -6,7 +6,7 @@
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 13:19:15 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/11 13:30:17 by wimafora         ###   ########.fr       */
+/*   Updated: 2019/06/11 14:57:27 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ char		**ft_strsplit(char const *s, char c)
 	size_t	i;
 	size_t	start;
 
+	if (!s)
+		return (NULL);
 	nb_words = get_nb_words(s, c);
 	split = (char**)malloc(sizeof(char*) * (nb_words + 1));
 	if (split == NULL)

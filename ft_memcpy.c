@@ -6,7 +6,7 @@
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 12:28:29 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/03 12:28:31 by wimafora         ###   ########.fr       */
+/*   Updated: 2019/06/11 14:47:13 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 
 	d = dst;
 	s = src;
+	if (!dst && !src)
+		return (NULL);
 	while (len > 0)
 	{
 		*d = *s;

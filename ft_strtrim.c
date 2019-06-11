@@ -6,7 +6,7 @@
 /*   By: wimafora <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:32:26 by wimafora          #+#    #+#             */
-/*   Updated: 2019/06/06 15:45:17 by wimafora         ###   ########.fr       */
+/*   Updated: 2019/06/11 14:56:57 by wimafora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s)
 	size_t	len;
 
 	start = 0;
+	if (!s)
+		return (NULL);
 	while ((s[start] == ' ' || s[start] == '\n' || s[start] == '\t'))
 		start++;
 	if (s[start] == '\0')
